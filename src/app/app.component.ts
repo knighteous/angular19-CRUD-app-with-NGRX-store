@@ -11,5 +11,5 @@ import { FooterComponent } from './components/footer/footer.component'
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'crud20_ng'
+  title = 'angular19-CRUD-app-with-NGRX-store'
 }

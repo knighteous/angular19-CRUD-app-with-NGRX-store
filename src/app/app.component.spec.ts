@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'crud20_ng' title`, () => {
+  it(`should have the 'angular19-CRUD-app-with-NGRX-store' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('crud20_ng');
+    expect(app.title).toEqual('angular19-CRUD-app-with-NGRX-store');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, crud20_ng');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular19-CRUD-app-with-NGRX-store');
   });
 });
