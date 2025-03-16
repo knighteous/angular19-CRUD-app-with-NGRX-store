@@ -1,0 +1,73 @@
+<div class="table-responsive">
+    <table class="table table-danger">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">uniqueid</th>
+          <th scope="col">update</th>
+          <th scope="col">delete</th>
+          <th scope="col">fullname</th>
+          <th scope="col">phone</th>
+          <th scope="col">email</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(employee of employees$ | async; track $index) {
+        <tr>
+          <th scope="row">{{$index+1}}</th>
+          <td>{{employee.id}}</td>
+          <td>
+            <button (click)="onUpdateCta(employee)" type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#employeeFormModal">update</button>
+          </td>
+          <td>
+            <button (click)="onDelete(employee.id)" type="button" class="btn btn-secondary btn-sm">delete</button>
+          </td>
+          <td>{{ employee.fullname }}</td>
+          <td>{{ employee.phone }}</td>
+          <td>{{ employee.email }}</td>
+        </tr>
+        } @empty {
+            <tr>
+                <th scope="row">&nbsp;</th>
+                <td colspan="6">There are no records to display</td>
+            </tr>
+        }
+      </tbody>
+    </table>
+
+    <div class="modal fade" id="employeeFormModal" tabindex="-1" aria-labelledby="employeeFormModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-uppercase text-dark" id="employeeFormModalLabel">Employee form</h1>
+            <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="empForm">
+              <div class="mb-3">
+                <label for="fullname" class="form-label">fullname</label>
+                <input type="text" name="fullname" formControlName="fullname" class="form-control" id="fullname" aria-describedby="fullnameHelp">
+                <div id="fullnameHelp" class="form-text">We'll never share your fullname with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">phone</label>
+                <input type="text" name="phone" formControlName="phone" class="form-control" id="phone" aria-describedby="phoneHelp">
+                <div id="phoneHelp" class="form-text">We'll never share your phone number with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">email</label>
+                <input type="text" name="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">cancel</button>
+            <button (click)="onUpdate()" type="button" class="btn btn-info btn-sm">update</button>
+            <button (click)="onAdd()" type="button" class="btn btn-danger btn-sm">add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
