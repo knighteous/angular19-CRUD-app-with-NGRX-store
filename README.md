@@ -65,4 +65,8 @@ npm install -g json-server
 
 ## Usage
 
-db.json5 file is included in the source code
+Watch db.json5 file (included in the source code) in a new terminal window
+
+```bash
+json-server --watch db.json5
+```
