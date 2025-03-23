@@ -52,7 +52,7 @@ export class EmployeeComponent implements OnInit {
 
   //       this.store.dispatch(onLoadSuccess({employees: res}))
   //     },
-  //     error: (err: HttpErrorResponse) => console.error(err?.message),
+  //     error: (err: HttpErrorResponse) => console.table([err]),
   //     complete: () => {}
   //   })
   // }
@@ -75,7 +75,7 @@ export class EmployeeComponent implements OnInit {
 
     //     this.store.dispatch(onAddSuccess({employeeNew: res}))
     //   },
-    //   error: (err: HttpErrorResponse) => console.error(err?.message),
+    //   error: (err: HttpErrorResponse) => console.table([err]),
     //   complete: () => {
     //     this.onCloseModal()
     //     this.onResetForm()
@@ -109,7 +109,7 @@ export class EmployeeComponent implements OnInit {
 
     //     this.store.dispatch(onUpdateSuccess({employeeEdit: res}))
     //   },
-    //   error: (err: HttpErrorResponse) => console.error(err?.message),
+    //   error: (err: HttpErrorResponse) => console.table([err]),
     //   complete: () => {
     //     this.onCloseModal()
     //     this.onResetForm()
@@ -132,7 +132,7 @@ export class EmployeeComponent implements OnInit {
 
     //     this.store.dispatch(onDeleteSuccess({employee: res}))
     //   },
-    //   error: (err: HttpErrorResponse) => console.error(err?.message),
+    //   error: (err: HttpErrorResponse) => console.table([err]),
     //   complete: () => {
     //     this.onResetForm()
     //     // this.onLoad()
